@@ -38,8 +38,8 @@ def Decode(key,message):
     message = base64.urlsafe_b64decode(message).decode()
 
     for i in range(len(message)):
-        key_c = key[i % len(message)]
-        dec.append(chr((256 + ord(message[i]) - ord(key_c)) % 256))
+        key_c = key[i % len(key)]
+        dec.append(chr((256 + ord(message[i])-ord(key_c)) % 256))
     return "".join(dec)
 
 # Mode
@@ -52,9 +52,14 @@ def Mode():
     else:
         Result.set('Invalid Result')
 
-# Clear
-''' The Clear function is used to clear the entire input and output '''
-def Clear():
+# Exit
+''' The Exit function is used to cancel out the window '''
+def Exit():
+    root.destroy()
+
+# Reset
+''' The Reset function is used to clear the entire input and output '''
+def Reset():
     Text.set("")
     private_key.set("")
     mode.set("")
@@ -68,6 +73,6 @@ Label(root, font = 'arial 12 bold', text ='MODE(e-encode, d-decode)').place(x=60
 Entry(root, font = 'arial 10', textvariable = mode , bg= 'ghost white').place(x=290, y = 120)
 Entry(root, font = 'arial 10 bold', textvariable = Result, bg ='ghost white').place(x=290, y = 150)
 Button(root, font = 'arial 10 bold', text = 'RESULT'  ,padx =2,bg ='LightGray' ,command = Mode).place(x=60, y = 150)
-Button(root, font = 'arial 10 bold' ,text ='RESET' ,width =6, command = ConnectionResetError, bg = 'LimeGreen', padx=2).place(x=80, y = 190)
-Button(root, font = 'arial 10 bold',text= 'CLEAR' , width = 6, command = Clear,bg = 'OrangeRed', padx=2, pady=2).place(x=180, y = 190)
+Button(root, font = 'arial 10 bold' ,text ='RESET' ,width =6, command = Reset, bg = 'LimeGreen', padx=2).place(x=80, y = 190)
+Button(root, font = 'arial 10 bold',text= 'EXIT' , width = 6, command = Exit,bg = 'OrangeRed', padx=2, pady=2).place(x=180, y = 190)
 root.mainloop()
