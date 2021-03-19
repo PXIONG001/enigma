@@ -69,5 +69,5 @@ Entry(root, font = 'arial 10', textvariable = mode , bg= 'ghost white').place(x=
 Entry(root, font = 'arial 10 bold', textvariable = Result, bg ='ghost white').place(x=290, y = 150)
 Button(root, font = 'arial 10 bold', text = 'RESULT'  ,padx =2,bg ='LightGray' ,command = Mode).place(x=60, y = 150)
 Button(root, font = 'arial 10 bold' ,text ='RESET' ,width =6, command = ConnectionResetError, bg = 'LimeGreen', padx=2).place(x=80, y = 190)
-Button(root, font = 'arial 10 bold',text= 'EXIT' , width = 6, command = Exit,bg = 'OrangeRed', padx=2, pady=2).place(x=180, y = 190)
+Button(root, font = 'arial 10 bold',text= 'CLEAR' , width = 6, command = Clear,bg = 'OrangeRed', padx=2, pady=2).place(x=180, y = 190)
 root.mainloop()
