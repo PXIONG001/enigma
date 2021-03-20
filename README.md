@@ -1,3 +1,6 @@
+# My Enigma Machine
+This was a little side project that I wanted to do. I did a little bit of research and did my best with the code. Be advise, there will be more to come, and I am planning to make a GUI instead of a program that you use on the computer. 
+
 # The Enigma Machine
 The Enigma Machine was a cipher device used by the Germans in World War 2 to encrypt their messages.
 
