@@ -60,7 +60,9 @@ def __init__(self, steckerbrett = {" ":" "}, settings_file = None, alpha = None,
             self.alphabet.remove(self.steckerbrett[letter])
     self.steckerbrett.update({self.steckerbrett[letter]:letter})
     self.reflector = [letter for letter in reversed(self.alphabet)]
-
+'''
+The permutate function permutates the letters.
+'''
 def permutate(self, rotor):
     new_alphabet = ''.join(self.alphabet)
     new_alphabet = list(new_alphabet)
@@ -69,6 +71,9 @@ def permutate(self, rotor):
         new_alphabet.pop(-1)
     return new_alphabet
 
+'''
+The inverse_permutate function permutates the letters inversely.
+'''
 def inverse_permutate(self, rotor):
     new_alphabet = ''.join(self.alphabet)
     new_alphabet = list(new_alphabet)
