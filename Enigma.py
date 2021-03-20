@@ -59,7 +59,7 @@ class enigma:
             if letter in self.alphabet:
                 self.alphabet.remove(letter)
                 self.alphabet.remove(self.steckerbrett[letter])
-        self.steckerbrett.update({self.steckerbrett[letter]:letter})
+                self.steckerbrett.update({self.steckerbrett[letter]:letter})
         self.reflector = [letter for letter in reversed(self.alphabet)]
     '''
     The permutate function permutates the letters.
@@ -79,7 +79,7 @@ class enigma:
         new_alphabet = ''.join(self.alphabet)
         new_alphabet = list(new_alphabet)
         for iter in range(rotor):
-            new_alphabet.insert(0, new_alphabet[0])
+            new_alphabet.append(new_alphabet[0])
             new_alphabet.pop(0)
         print(self.alphabet)
         print(new_alphabet)
@@ -120,4 +120,4 @@ class enigma:
         return ''.join(encrypted_text)
 
 Enigma = enigma({"b":'a', ' ':' ', 'e':'z'}, alpha = 5, beta = 17, gama = 24)
-print(Enigma.encrypt_text('there is no way'))
+print(Enigma.encrypt_text('hello my name is peng xiong'))
