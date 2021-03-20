@@ -1,12 +1,15 @@
-from string import Template, ascii_lowercase
+# Import ascii_uppercase from string
+from string import ascii_uppercase
+# import json
 import json
 
-class enigma:
+''' The Digitalized version of the Enigma Machine '''
+class Enigma:
     ''' Initalizing varaibales '''
     def __init__(self, steckerbrett = {" ":" "}, settings_file = None, alpha = None, beta = None, gama = None):
         ''' Intializing the enigma '''
-        # Creating a list of the alphabet with ascii_lowercase
-        self.alphabet = list(ascii_lowercase)
+        # Creating a list of the alphabet with ascii_lower
+        self.alphabet = list(ascii_uppercase)
 
         ''' 
         The steckerbrett is the part of the enigma machine where the encryptor
@@ -85,14 +88,13 @@ class enigma:
         print(new_alphabet)
         return new_alphabet
 
-    '''
-    The encrypt function encrypts the text
-    '''
+    ''' The encrypt function encrypts the text '''
     def encrypt_text(self, text):
         encrypted_text = []
-        text = text.lower()
+        text = text.upper()
         text.split()
 
+        # Looping through the entire 
         for letter in text:
             if letter in self.steckerbrett:
                 encrypted_text.append(self.steckerbrett[letter])
@@ -119,5 +121,5 @@ class enigma:
                 print(temp_letter)
         return ''.join(encrypted_text)
 
-Enigma = enigma({"b":'a', ' ':' ', 'e':'z'}, alpha = 5, beta = 17, gama = 24)
-print(Enigma.encrypt_text('hello my name is peng xiong'))
+The_Enigma = Enigma({"b":'a', ' ':' ', 'e':'z'}, alpha = 5, beta = 17, gama = 24)
+print(The_Enigma.encrypt_text('TOYOTA'))
